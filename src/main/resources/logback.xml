@@ -1,0 +1,7 @@
+<!--mybatis日志输出至logback-->
+<logger name="MybatisSql2Logback" level="DEBUG">
+    <!--打印至日志-->
+    <appender-ref ref="ALL_APPENDER"/>
+    <!--打印至控制台-->
+    <appender-ref ref="STDOUT" />
+</logger>

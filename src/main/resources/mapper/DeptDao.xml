@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.com.sise.dao.DeptDao">
+    <!--<mapper namespace="DeptMapper">-->
+<!--    <resultMap id="dept" type="cn.com.sise.pojo.Dept">-->
+<!--        <id column="dept_id" property="dept_id"/>-->
+<!--        <result column="dept_name" property="dept_name" />-->
+<!--        <collection  column="dept_id" property="majors"-->
+<!--                    select="cn.com.sise.dao.iMajor.selectByDept"/>-->
+<!--    </resultMap>-->
+
+<!--    <select id="selectAllDept" resultMap="dept">-->
+<!--        select *-->
+<!--        from tb_dept-->
+<!--        where dept_name like "%${value}%"-->
+<!--    </select>-->
+<!--    <select id="selectById" resultType="cn.com.sise.pojo.Dept">-->
+<!--        select *-->
+<!--        from tb_dept-->
+<!--        where dept_id = #{id};-->
+<!--    </select>-->
+<!--    <insert id="insertDept" parameterType="cn.com.sise.pojo.Dept">-->
+<!--        insert into tb_dept-->
+<!--        values (#{dept_id}, #{dept_name})-->
+<!--    </insert>-->
+<!--    <update id="updateDept" parameterType="cn.com.sise.pojo.Dept">-->
+<!--        update tb_dept-->
+<!--        set dept_id=#{dept_id},-->
+<!--            dept_name=#{dept_name}-->
+<!--        where dept_id = 100-->
+<!--    </update>-->
+<!--    <delete id="deleteDept" parameterType="cn.com.sise.pojo.Dept">-->
+<!--        delete-->
+<!--        from tb_dept-->
+<!--        where dept_id = #{dept_id}-->
+<!--    </delete>-->
+</mapper>

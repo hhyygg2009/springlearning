@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--1.以Setter方式，注入系的信息：计算机系，编号为407-->
+    <bean id="dept" class="cn.com.sise.pojo.Dept">
+        <property name="dept_id" value="407"/>
+        <property name="dept_name" value="计算机系"/>
+    </bean>
+
+
+    <!--2.以构造器方式，注入专业信息-->
+    <!--专业代码：06，名称：计算机科学与技术专业，学费：26000-->
+    <bean id="major" class="cn.com.sise.pojo.Major">
+        <constructor-arg name="major_id" value="06"/>
+        <constructor-arg name="major_name" value="计算机科学与技术专业"/>
+        <constructor-arg name="tuition" value="26000"/>
+        <constructor-arg name="dept_id" value="407"/>
+    </bean>
+
+    <!--3.1 两种方式混合使用，注入学习导师的信息，role==0-->
+
+    <!--（1）先以Setter方式，注入学习导师的姓名、电话号码和系别-->
+
+    <bean name="teacher1" class="cn.com.sise.pojo.Teacher">
+        <property name="teacherName" value="小黄"/>
+        <property name="tel" value="88888888"/>
+        <property name="deptId" value="666666"/>
+
+        <constructor-arg name="jobId" value="11111"/>
+        <constructor-arg name="role" value="2"/>
+        <constructor-arg name="gender" value="1"/>
+    </bean>
+
+
+    <!--（2）然后以构造器方式，注入学习导师的工号、角色和性别信息-->
+
+
+    <!--3.2 两种方式混合使用，注入辅导员的信息，role==1-->
+
+    <!--（1）先以Setter方式，注入辅导员的姓名、电话号码和系别-->
+    <bean name="teacher2" class="cn.com.sise.pojo.Teacher">
+        <property name="teacherName" value="小黄"/>
+        <property name="tel" value="88888888"/>
+        <property name="deptId" value="666666"/>
+
+        <constructor-arg name="jobId" value="11111"/>
+        <constructor-arg name="role" value="1"/>
+        <constructor-arg name="gender" value="1"/>
+    </bean>
+
+
+    <!--（2）然后以构造器方式，注入辅导员的工号、角色和性别信息-->
+
+
+    <!--4.两种方式混合使用，注入班级的信息-->
+
+    <!--（1）以Setter方式注入班级的编号、名称、人数和剩余人数信息-->
+    <bean id="class" class="cn.com.sise.pojo.Class">
+        <property name="classId" value="123"/>
+        <property name="className" value="小课"/>
+        <property name="classSize" value="30"/>
+        <property name="classSurplus" value="20"/>
+
+        <property name="major" ref="major"/>
+        <property name="dept" ref="dept"/>
+        <property name="instructor" ref="teacher1"/>
+        <property name="tutor" ref="teacher2"/>
+    </bean>
+
+
+    <!--（2）以对象引用方式注入班级所在专业、所在系，班级的指导老师和辅导员信息-->
+</beans>

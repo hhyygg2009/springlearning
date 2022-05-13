@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.com.sise.dao.FreshmanDao">
+    <select id="select" parameterType="cn.com.sise.pojo.Freshman" resultType="cn.com.sise.pojo.Freshman">
+        select * from tb_freshman
+        where 1=1
+        <if test="ticketNumber!=null">and ticketnumber=#{ticketNumber}</if>
+        <if test="idCard!=null">and id_card=#{idCard}</if>
+        <if test="stuNo!=null">and stuNo=#{stuNo}</if>
+    </select>
+<!--    <select id="select" parameterType="cn.com.sise.pojo.Freshman" resultType="cn.com.sise.pojo.Freshman">-->
+<!--        select * from tb_freshman-->
+<!--        where 1=1-->
+<!--        <choose>-->
+<!--            <when test="ticketNumber!=null">and ticketnumber=#{ticketNumber}</when>-->
+<!--            <when test="idCard!=null">and id_card=#{idCard}</when>-->
+<!--            <when test="stuNo!=null">and stuNo=#{stuNo}</when>-->
+<!--        </choose>-->
+<!--    </select>-->
+<!--    <select id="select" resultType="cn.com.sise.pojo.Freshman">-->
+<!--        select * from tb_freshman-->
+<!--        where-->
+<!--        <foreach collection="list" item="id" index="index"-->
+<!--                 separator="and">${index}=#{id}-->
+<!--        </foreach>-->
+<!--    </select>-->
+</mapper>
